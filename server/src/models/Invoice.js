@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const invoiceSchema = new mongoose.Schema({ invoiceNumber:{type:String,required:true,unique:true,trim:true}, clientId:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true,index:true}, createdBy:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true}, title:{type:String,required:true,trim:true}, description:{type:String,required:true,trim:true}, amount:{type:Number,required:true,min:0.01}, currency:{type:String,enum:['USD'],default:'USD'}, issueDate:{type:Date,required:true}, dueDate:{type:Date,required:true}, status:{type:String,enum:['pending','paid','overdue'],default:'pending',index:true}, notes:{type:String,default:''}, stripeSessionId:{type:String,default:null}, stripePaymentIntentId:{type:String,default:null}, paidAt:{type:Date,default:null} },{timestamps:true});
+invoiceSchema.index({clientId:1,status:1});
+export default mongoose.model('Invoice',invoiceSchema);
