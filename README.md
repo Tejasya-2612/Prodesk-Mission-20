@@ -2,6 +2,15 @@
 
 Enterprise invoice and payment management demo for Nexus Corporate Services. Admin and client portals use React/Vite; the API uses Express, MongoDB/Mongoose, JWT, Stripe Checkout, PDFKit, and Nodemailer.
 
+## Deployment
+
+Frontend:
+https://prodesk-mission-20-hyuk.vercel.app/
+
+https://prodesk-mission-20.vercel.app/
+
+Backend:
+https://prodesk-mission-20-2.onrender.com
 ## Features
 
 - Role-based admin and client workspaces; JWT is held in an HttpOnly, SameSite cookie.
@@ -10,6 +19,12 @@ Enterprise invoice and payment management demo for Nexus Corporate Services. Adm
 - Stripe Checkout sessions derive price and currency from MongoDB. The raw-body webhook verifies Stripe signatures, validates invoice/session/amount/currency, and stores event IDs for idempotency before setting an invoice paid.
 - Receipt email and payment record are created on verified success. SMTP failures are safely logged.
 - Development seed with one admin and three clients, sample invoice states, and manual security audit instructions.
+
+## Screenshots
+<img width="1532" height="682" alt="Screenshot 2026-10-16 140503" src="https://github.com/user-attachments/assets/b07eceb1-768c-4cea-bef9-26d7d8cbf16e" />
+<img width="1530" height="672" alt="Screenshot 2026-10-16 141005" src="https://github.com/user-attachments/assets/d2fe4960-9341-4c11-bcf9-a7c2463ba1a8" />
+<img width="1238" height="693" alt="Screenshot 2026-10-16 140645" src="https://github.com/user-attachments/assets/86892875-cf33-4ae2-b5e7-35850d7e1112" />
+<img width="766" height="590" alt="Screenshot 2026-10-16 140941" src="https://github.com/user-attachments/assets/693dbc87-1078-4b09-a803-8feca59a21f9" />
 
 ## Structure
 
